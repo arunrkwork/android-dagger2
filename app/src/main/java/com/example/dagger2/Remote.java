@@ -4,12 +4,16 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-public class Wheels {
+public class Remote {
 
     private static final String TAG = "Car";
 
     @Inject
-    public Wheels() {
-        Log.d(TAG, "Wheels: constructor called...");
+    public Remote() {
     }
+
+    public void setListener(Car car) {
+        Log.d(TAG, "Remote connected");
+    }
+
 }

@@ -8,13 +8,26 @@ public class Car {
 
     private static final String TAG = "Car";
 
-    private Engine engine;
-    private Wheels wheels;
+    @Inject Engine engine;
+    @Inject Wheels wheels;
+
+    /*
+        Inject work in the order of
+
+        1. constructor
+        2. fields (Ex : object declaration)
+        3. methods
+
+    */
+    @Inject
+    public Car() {
+        Log.d(TAG, "Car constructor called...");
+    }
 
     @Inject
-    public Car(Engine engine, Wheels wheels) {
-        this.engine = engine;
-        this.wheels = wheels;
+    public void enableRemote(Remote remote) {
+        Log.d(TAG, "enableRemote: called...");
+        remote.setListener(this);
     }
 
     public void drive() {
