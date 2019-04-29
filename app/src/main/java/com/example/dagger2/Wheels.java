@@ -8,8 +8,12 @@ public class Wheels {
 
     private static final String TAG = "Car";
 
-    @Inject
-    public Wheels() {
+    private Rims rims;
+    private Tires tires;
+
+    public Wheels(Rims rims, Tires tires) {
         Log.d(TAG, "Wheels: constructor called...");
+        this.rims = rims;
+        this.tires = tires;
     }
 }
