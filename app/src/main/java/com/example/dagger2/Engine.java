@@ -4,12 +4,9 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-public class Engine {
+public interface Engine {
 
-    private static final String TAG = "Car";
 
-    @Inject
-    public Engine() {
-        Log.d(TAG, "Engine: constructor called...");
-    }
+    void start();
+
 }
